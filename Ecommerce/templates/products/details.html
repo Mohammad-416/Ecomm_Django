@@ -1,0 +1,79 @@
+{% extends "base/base.html" %}
+{%load static%}
+{% block 'title' %}Products - E-Commerce{% endblock %}
+{% block 'banner' %}
+{%for product in products%}
+<div class="container product-details mt-4">
+    <img src="/media/{{product.product_images.first.image}}" alt="Product Image" class="product-image">
+    <div class="product-info">
+        <h2 class="product-title">{{product.product_name}}</h2>
+        <p class="product-description">
+            {{product.product_description}}
+        </p>
+        <p class="product-price">Rs. {{product.price}}</p>
+        <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+        <button class="btn btn-primary add-to-cart-btn">Buy Now</button>
+    </div>
+</div>
+{%endfor%}
+{%endblock%}
+{% block 'content'%} 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .product-details {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .product-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .product-price {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .add-to-cart-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+    
+{% endblock%}
