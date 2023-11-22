@@ -138,4 +138,4 @@ EMAIL_HOST = 'smtp-mail.outlook.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'futuristiccoders@outlook.com'
-EMAIL_HOST_PASSWORD = 'Mohammad@123'
+EMAIL_HOST_PASSWORD = ''
